@@ -19,13 +19,14 @@ You don't need to read input or print anything. Complete the function MissingNum
 
 Expected Time Complexity: O(N)
 Expected Auxiliary Space: O(1)
+
 */
 
 import java.io.*;
 import java.util.*;
 
 class Solution {
-	// function will take array and size of array as input
+	// function will take array of datatype int and size of array as int, as input
     int MissingNumber(int array[], int n) {
         // Your Code Here
         int sum = 0, sum2=0, i=0;
