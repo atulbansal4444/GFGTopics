@@ -23,23 +23,33 @@ package Arrays;
 
 import java.util.*;
 
-class MajorityElement {
-    static int majorityElement(int a[], int size) {
+class MajorityElement
+{
+    static int majorityElement(int a[], int size)
+    {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         int max = -1;
-        for (int i = 0; i < size; i++) {
-            if (map.containsKey(a[i])) {
+        for (int i = 0; i < size; i++)
+        {
+            if (map.containsKey(a[i]))
+            {
                 int count = map.get(a[i]);
                 count++;
                 map.put(a[i], count);
                 if (count > max)
+                {
                     max = count;
-            } else {
+                }
+            }
+            else
+            {
                 map.put(a[i], 1);
             }
         }
-        for (Map.Entry<Integer, Integer> e : map.entrySet()) {
-            if (e.getValue() > size / 2) {
+        for (Map.Entry<Integer, Integer> e : map.entrySet())
+        {
+            if (e.getValue() > size / 2)
+            {
                 return e.getKey();
             }
         }
