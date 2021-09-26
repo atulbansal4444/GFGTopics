@@ -26,25 +26,30 @@ Expected Time Complexity: O(n)
 Expected Auxiliary Space: O(n)
 */
 
+package Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
 
-class Solution {
-    // Function to find the leaders in the array.
-    static ArrayList<Integer> leaders(int arr[], int n) {
+class LeadersInAnArray
+{
+    static ArrayList<Integer> leaders(int arr[], int n)
+    {
         ArrayList<Integer> list = new ArrayList<Integer>();
         int max = arr[n - 1];
         list.add(arr[n - 1]);
 
         // for array size 1 directly returning the list with 1 element.
-        if (n == 1) {
+        if (n == 1)
+        {
             return list;
         }
 
         // traverse from back and check if the max is less than the arr[i] chnge max and
         // push it in list.
-        for (int i = n - 2; i >= 0; i--) {
-            if (arr[i] >= max) {
+        for (int i = n - 2; i >= 0; i--)
+        {
+            if (arr[i] >= max)
+            {
                 max = arr[i];
                 list.add(max);
             }
