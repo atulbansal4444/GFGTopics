@@ -32,11 +32,12 @@ Expected Time Complexity: O(n)
 Expected Auxiliary Space: O(1)
 */
 
+package Arrays;
 
 import java.io.*;
 import java.util.*;
 
-class Solution
+class EquilibriumPoint
 {
     // a: input array
     // n: size of array
