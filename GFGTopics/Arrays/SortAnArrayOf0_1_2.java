@@ -1,3 +1,4 @@
+package Arrays;
 /*
 Given an array of size N containing only 0s, 1s, and 2s; sort the array in ascending order.
 
@@ -31,32 +32,41 @@ Expected Auxiliary Space: O(1)
 
 import java.util.*;
 
-class Solution {
-    public static void sort012(int a[], int n) {
+class SortArrayOf_0_1_2
+{
+    public static void sort012(int a[], int n)
+    {
         int count1 = 0;
         int count2 = 0;
         int count0 = 0;
-        for (int i = 0; i < n; i++) {
-            if (a[i] == 0) {
-                a[count0] = 0;
-                count0++;
-            } else if (a[i] == 1) {
+        for (int i = 0; i < n; i++)
+        {
+            if (a[i] == 0)
+            {
+                a[count0++] = 0;
+            } 
+            else if (a[i] == 1)
+            {
+                // count 1s
                 count1++;
-            } else {
+            } 
+            else
+            {
+                // count 2s 
                 count2++;
             }
         }
 
-        while (count1 > 0) {
+        while (count1 > 0)
+        {
             count1--;
-            a[count0] = 1;
-            count0++;
+            a[count0++] = 1;
         }
 
-        while (count2 > 0) {
+        while (count2 > 0)
+        {
             count2--;
-            a[count0] = 2;
-            count0++;
+            a[count0++] = 2;
         }
     }
 }
