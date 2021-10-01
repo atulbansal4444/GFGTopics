@@ -30,41 +30,29 @@ Expected Time Complexity: O(N)
 Expected Auxiliary Space: O(1)
 */
 
-import java.util.*;
-
-class SortArrayOf_0_1_2
-{
-    public static void sort012(int a[], int n)
-    {
+class SortArrayOf_0_1_2 {
+    public static void sort012(int a[], int n) {
         int count1 = 0;
         int count2 = 0;
         int count0 = 0;
-        for (int i = 0; i < n; i++)
-        {
-            if (a[i] == 0)
-            {
+        for (int i = 0; i < n; i++) {
+            if (a[i] == 0) {
                 a[count0++] = 0;
-            } 
-            else if (a[i] == 1)
-            {
+            } else if (a[i] == 1) {
                 // count 1s
                 count1++;
-            } 
-            else
-            {
-                // count 2s 
+            } else {
+                // count 2s
                 count2++;
             }
         }
 
-        while (count1 > 0)
-        {
+        while (count1 > 0) {
             count1--;
             a[count0++] = 1;
         }
 
-        while (count2 > 0)
-        {
+        while (count2 > 0) {
             count2--;
             a[count0++] = 2;
         }

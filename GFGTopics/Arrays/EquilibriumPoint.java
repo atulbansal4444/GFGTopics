@@ -34,51 +34,36 @@ Expected Auxiliary Space: O(1)
 
 package Arrays;
 
-import java.io.*;
-import java.util.*;
-
-class EquilibriumPoint
-{
+class EquilibriumPoint {
     // a: input array
     // n: size of array
-    public static int equilibriumPoint(long arr[], int n)
-    {
-        if (n == 1)
-        {
+    public static int equilibriumPoint(long arr[], int n) {
+        if (n == 1) {
             return 1;
-        }
-        else if (n == 2) return -1;
-        long []front = new long[n];
-        long []back = new long[n];
-        
-        for (int i=0; i<n; i++)
-        {
-            if (i !=0 )
-            {
-                front[i] = front[i-1] + arr[i];
-            }
-            else
-            {
+        } else if (n == 2)
+            return -1;
+        long[] front = new long[n];
+        long[] back = new long[n];
+
+        for (int i = 0; i < n; i++) {
+            if (i != 0) {
+                front[i] = front[i - 1] + arr[i];
+            } else {
                 front[i] = arr[i];
             }
         }
-        for (int i = n-1; i>0; i--)
-        {
-            if (i <= n-2)
-            {
-                back[i] = back[i+1] + arr[i];
-            }
-            else
-            {
+        for (int i = n - 1; i > 0; i--) {
+            if (i <= n - 2) {
+                back[i] = back[i + 1] + arr[i];
+            } else {
                 back[i] = arr[i];
             }
         }
-        for(int i=0; i<n; i++)
-        {
-            if (front[i]==back[i])
-                return i+1;
+        for (int i = 0; i < n; i++) {
+            if (front[i] == back[i])
+                return i + 1;
         }
         return -1;
-        
+
     }
 }

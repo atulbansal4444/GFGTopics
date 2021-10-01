@@ -22,8 +22,6 @@ package Arrays;
  * Expected Time Complexity: O(n) Expected Auxiliary Space: O(1)
  */
 
-import java.util.*;
-
 class ProductArrayPuzzle {
     public static long[] productExceptSelf(int nums[], int n) {
         // code here
