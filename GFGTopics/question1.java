@@ -35,40 +35,30 @@ n: number of pairs in the input
 
 */
 
-
-import java.io.*;
 import java.util.*;
 
-public class Solution {
-  private static ArrayList<Integer> getListOfAllNodes(int[][] parentChildPairs)
-  {
+public class Question1 {
+  public static ArrayList<Integer> getListOfAllNodes(int[][] parentChildPairs) {
     ArrayList<Integer> listOfNodes = new ArrayList<Integer>();
-    for (int i=0;i<parentChildPairs.length; i++)
-    {
-      for (int j=0;j<parentChildPairs[0].length;j++)
-      {
-        if (!listOfNodes.contains(parentChildPairs[i][j]))
-        {
+    for (int i = 0; i < parentChildPairs.length; i++) {
+      for (int j = 0; j < parentChildPairs[0].length; j++) {
+        if (!listOfNodes.contains(parentChildPairs[i][j])) {
           listOfNodes.add(parentChildPairs[i][j]);
         }
       }
     }
     return listOfNodes;
   }
-  
-  private static ArrayList<ArrayList<Integer>> getFunc(int[][] parentChildPairs)
-  {
+
+  public static ArrayList<ArrayList<Integer>> getFunc(int[][] parentChildPairs) {
     ArrayList<Integer> listOfNode = getListOfAllNodes(parentChildPairs);
     Map<Integer, Integer> mapOfNodesWithNnumberOfParents = new HashMap<Integer, Integer>();
 
-    for (int j=0; j < parentChildPairs.length; j++)
-    {
-      if (mapOfNodesWithNnumberOfParents.containsKey(parentChildPairs[j][1]))
-      {
-        mapOfNodesWithNnumberOfParents.put(parentChildPairs[j][1], mapOfNodesWithNnumberOfParents.get(parentChildPairs[j][1]) + 1);
-      }
-      else
-      {
+    for (int j = 0; j < parentChildPairs.length; j++) {
+      if (mapOfNodesWithNnumberOfParents.containsKey(parentChildPairs[j][1])) {
+        mapOfNodesWithNnumberOfParents.put(parentChildPairs[j][1],
+            mapOfNodesWithNnumberOfParents.get(parentChildPairs[j][1]) + 1);
+      } else {
         mapOfNodesWithNnumberOfParents.put(parentChildPairs[j][1], 1);
       }
     }
@@ -76,31 +66,25 @@ public class Solution {
     ArrayList<Integer> listWithoneParent = new ArrayList<Integer>();
     ArrayList<Integer> listWithZeroParent = new ArrayList<Integer>();
 
-    for(int i=0; i < listOfNode.size(); i++)
-    {
-      if (mapOfNodesWithNnumberOfParents.containsKey(listOfNode.get(i)) && mapOfNodesWithNnumberOfParents.get(listOfNode.get(i)) == 1)
-      {
+    for (int i = 0; i < listOfNode.size(); i++) {
+      if (mapOfNodesWithNnumberOfParents.containsKey(listOfNode.get(i))
+          && mapOfNodesWithNnumberOfParents.get(listOfNode.get(i)) == 1) {
         listWithoneParent.add(listOfNode.get(i));
-      }
-      else if(!mapOfNodesWithNnumberOfParents.containsKey(listOfNode.get(i)))
-      {
+      } else if (!mapOfNodesWithNnumberOfParents.containsKey(listOfNode.get(i))) {
         listWithZeroParent.add(listOfNode.get(i));
       }
     }
-    
+
     ArrayList<ArrayList<Integer>> listNodesWithZeroAndOneParent = new ArrayList<ArrayList<Integer>>();
     listNodesWithZeroAndOneParent.add(listWithZeroParent);
     listNodesWithZeroAndOneParent.add(listWithoneParent);
     return listNodesWithZeroAndOneParent;
-}
-  
+  }
+
   public static void main(String[] argv) {
-    int[][] parentChildPairs = new int[][] {
-      {5, 6}, {1, 3}, {2, 3}, {3, 6}, {15, 12}, {5, 7}, 
-      {4, 5}, {4, 9}, {9, 12}, {30, 16}
-    };
-  ArrayList<ArrayList<Integer>> nodesWithZeroAndOneParent = getFunc(parentChildPairs);  
-  System.out.println(nodesWithZeroAndOneParent);
-    //#done 
+    int[][] parentChildPairs = new int[][] { { 5, 6 }, { 1, 3 }, { 2, 3 }, { 3, 6 }, { 15, 12 }, { 5, 7 }, { 4, 5 },
+        { 4, 9 }, { 9, 12 }, { 30, 16 } };
+    ArrayList<ArrayList<Integer>> nodesWithZeroAndOneParent = getFunc(parentChildPairs);
+    System.out.println(nodesWithZeroAndOneParent);
   }
 }

@@ -1,4 +1,4 @@
-package Arrays;
+package Maths;
 /*
 Given an array of size N, find the smallest positive integer value that cannot be represented as sum of some elements from the array.
 
