@@ -1,6 +1,6 @@
-package Set;
+package Arrays;
 
-import java.util.*;
+import java.util.Arrays;
 
 public class ArrayDuplicate {
     public void duplicate(int N) {
