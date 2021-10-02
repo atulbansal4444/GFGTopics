@@ -21,21 +21,18 @@ Expected Time Complexity: O(N)
 Expected Auxiliary Space: O(1)
 
 */
+package Maths;
 
-import java.io.*;
-import java.util.*;
-
-class Solution {
-	// function will take array of datatype int and size of array as int, as input
+class MissingNumberInArray {
+    // function will take array of datatype int and size of array as int, as input
     int MissingNumber(int array[], int n) {
         // Your Code Here
-        int sum = 0, sum2=0, i=0;
-        for(i=1; i <= array.length; i++)
-        {
+        int sum = 0, i = 0;
+        for (i = 1; i <= array.length; i++) {
             sum += i;
-            sum -= array[i-1];
+            sum -= array[i - 1];
         }
-        //returns the missing number
-        return sum+i;
+        // returns the missing number
+        return sum + i;
     }
 }
