@@ -32,7 +32,7 @@ Expected Auxiliary Space: O(1)
 import java.util.Arrays;
 
 public class BinarySearchInForest {
-    static int find_height(int tree[], int n, int k) {
+    public static int findHeight(int tree[], int n, int k) {
         Arrays.sort(tree);
         int l = 0;
         int r = tree[n - 1];
@@ -56,5 +56,11 @@ public class BinarySearchInForest {
             }
         }
         return -1;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = { 2, 3, 6, 2, 4 };
+        int key = 4;
+        System.out.println(findHeight(arr, arr.length, key));
     }
 }
