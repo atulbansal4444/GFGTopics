@@ -1,4 +1,7 @@
 package Arrays;
+/*
+
+*/
 
 public class JumpGame {
     static int canReach(int[] A, int N) {
