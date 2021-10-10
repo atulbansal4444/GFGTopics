@@ -1,4 +1,4 @@
-package Searching;
+package Searching.BitonicPoint;
 
 /*
 Given an array arr of n elements which is first increasing and then may be decreasing, find the maximum element in the array.
