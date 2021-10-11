@@ -28,25 +28,19 @@ Expected Auxiliary Space: O(N)
 
 package Arrays;
 
-import java.util.*;
+import java.util.HashMap;
 
-public class AlternatePositiveAndNegativeNumbers
-{
-    void rearrange(int arr[], int n)
-    {
+public class AlternatePositiveAndNegativeNumbers {
+    static void rearrange(int arr[], int n) {
         HashMap<Integer, Integer> mapP = new HashMap<>();
         HashMap<Integer, Integer> mapN = new HashMap<>();
         int count = 0, count2 = 0;
 
-        for (int i = 0; i < n; i++)
-        {
-            if (arr[i] < 0)
-            {
+        for (int i = 0; i < n; i++) {
+            if (arr[i] < 0) {
                 count2++;
                 mapN.put(count2, arr[i]);
-            }
-            else if (arr[i] >= 0)
-            {
+            } else if (arr[i] >= 0) {
                 count++;
                 mapP.put(count, arr[i]);
             }
@@ -66,6 +60,14 @@ public class AlternatePositiveAndNegativeNumbers
                 arr[i] = mapN.get(k++);
                 count2--;
             }
+        }
+    }
+
+    public static void main(String[] args) {
+        int arr[] = { 9, 4, -2, -1, 5, 0, -5, -3, 2 };
+        rearrange(arr, arr.length);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
         }
     }
 }
