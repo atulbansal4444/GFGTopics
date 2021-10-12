@@ -49,27 +49,37 @@ public class AlternatePositiveAndNegativeNumbers
             }
         }
         int j = 1, k = 1;
-        for (int i = 0; i < n; i++) {
-            if (i % 2 == 0 && count > 0) {
+        for (int i = 0; i < n; i++)
+        {
+            if (i % 2 == 0 && count > 0)
+            {
                 arr[i] = mapP.get(j++);
                 count--;
-            } else if (i % 2 != 0 && count2 > 0) {
+            }
+            else if (i % 2 != 0 && count2 > 0)
+            {
                 arr[i] = mapN.get(k++);
                 count2--;
-            } else if (count > 0) {
+            }
+            else if (count > 0)
+            {
                 arr[i] = mapP.get(j++);
                 count--;
-            } else if (count2 > 0) {
+            }
+            else if (count2 > 0)
+            {
                 arr[i] = mapN.get(k++);
                 count2--;
             }
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         int[] arr = { 9, 4, -2, -1, 5, 0, -5, -3, 2 };
         rearrange(arr, arr.length);
-        for (int j : arr) {
+        for (int j : arr)
+        {
             System.out.print(j + " ");
         }
     }
