@@ -44,26 +44,51 @@ Note: Can you solve this problem without using extra space (O(1) Space) !
 */
 import java.util.*;
 
-public class FrequenciesOfLimitedRangeArrayElements {
-    public static void frequencyCount(int arr[], int N, int P) {
+public class FrequenciesOfLimitedRangeArrayElements
+{
+    public static void frequencyCount(int arr[], int N, int P)
+    {
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>(P);
-        for (int i = 0; i < N; i++) {
-            if (arr[i] <= P) {
-                if (map.containsKey(arr[i])) {
+        for (int i = 0; i < N; i++)
+        {
+            if (arr[i] <= P)
+            {
+                if (map.containsKey(arr[i]))
+                {
                     map.put(arr[i], map.get(arr[i]) + 1);
-                } else {
+                }
+                else
+                {
                     map.put(arr[i], 1);
                 }
-            } else {
+            }
+            else
+            {
                 arr[i] = 0;
             }
         }
-        for (int i = 0; i < N; i++) {
-            if (map.containsKey(i + 1)) {
+        for (int i = 0; i < N; i++)
+        {
+            if (map.containsKey(i + 1))
+            {
                 arr[i] = map.get(i + 1);
                 map.remove(i + 1);
-            } else
+            }
+            else
+            {
                 arr[i] = 0;
+            }
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        int[] arr = { 2, 3, 2, 3, 5 };
+        int p = 5;
+        frequencyCount(arr, arr.length, p);
+        for (int j : arr)
+        {
+            System.out.print(j + " ");
         }
     }
 }

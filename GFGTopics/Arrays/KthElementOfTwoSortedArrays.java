@@ -1,5 +1,3 @@
-package Arrays;
-
 /*
 Given two sorted arrays arr1 and arr2 of size N and M respectively and an element K. The task is to find the element that would be at the k’th position of the final sorted array.
  
@@ -36,18 +34,33 @@ Expected Time Complexity: O(Log(N) + Log(M))
 Expected Auxiliary Space: O(Log (N))
 */
 
-public class KthElementOfTwoSortedArrays {
-    public int kthElement(int arr1[], int arr2[], int n, int m, int k) {
+package Arrays;
+
+public class KthElementOfTwoSortedArrays
+{
+    public int kthElement(int arr1[], int arr2[], int n, int m, int k)
+    {
         int refIndex = 0, j = 0, l = 0;
         int element = arr1[0] < arr2[0] ? arr1[0] : arr2[0];
-        while (j < n && refIndex < m) {
-            if (arr1[j] < arr2[refIndex]) {
+        while (j < n && refIndex < m)
+        {
+            if (arr1[j] < arr2[refIndex])
+            {
                 element = arr1[j++];
-                l++;
-                if (l == k) {
-                    return element;
-                }
-            } else {
+            }
+            else
+            {
+                element = arr2[refIndex++];
+            }
+            l++;
+            if (l == k) {
+                return element;
+            }
+        }
+        if (j >= n)
+        {
+            while (refIndex < m)
+            {
                 element = arr2[refIndex++];
                 l++;
                 if (l == k) {
@@ -55,23 +68,27 @@ public class KthElementOfTwoSortedArrays {
                 }
             }
         }
-        if (j >= n) {
-            while (refIndex < m) {
-                element = arr2[refIndex++];
-                l++;
-                if (l == k) {
-                    return element;
-                }
-            }
-        } else {
-            while (j < n) {
+        else
+        {
+            while (j < n)
+            {
                 element = arr1[j++];
                 l++;
-                if (l == k) {
+                if (l == k)
+                {
                     return element;
                 }
             }
         }
         return -1;
+    }
+
+    public void main(String[] args)
+    {
+        int[] arr1 = { 2, 3, 6, 7, 9 };
+        int[] arr2 = { 1, 4, 8, 10 };
+        int k = 5;
+
+        System.out.println(kthElement(arr1, arr2, arr1.length, arr2.length, k));
     }
 }
