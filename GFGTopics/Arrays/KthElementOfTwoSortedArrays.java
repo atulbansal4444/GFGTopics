@@ -38,10 +38,10 @@ package Arrays;
 
 public class KthElementOfTwoSortedArrays
 {
-    public int kthElement(int arr1[], int arr2[], int n, int m, int k)
+    public static int kthElement(int arr1[], int arr2[], int n, int m, int k)
     {
         int refIndex = 0, j = 0, l = 0;
-        int element = arr1[0] < arr2[0] ? arr1[0] : arr2[0];
+        int element;
         while (j < n && refIndex < m)
         {
             if (arr1[j] < arr2[refIndex])
@@ -83,7 +83,7 @@ public class KthElementOfTwoSortedArrays
         return -1;
     }
 
-    public void main(String[] args)
+    public static void main(String[] args)
     {
         int[] arr1 = { 2, 3, 6, 7, 9 };
         int[] arr2 = { 1, 4, 8, 10 };
