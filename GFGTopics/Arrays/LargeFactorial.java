@@ -33,16 +33,22 @@ package Arrays;
 
 import java.util.HashMap;
 
-public class LargeFactorial {
-    public long factorials(long n, HashMap<Long, Long> map) {
+public class LargeFactorial
+{
+    public static long factorials(long n, HashMap<Long, Long> map)
+    {
         long M = 1000000007;
         long f = 1;
 
-        for (long i = n; i >= 1; i--) {
-            if (map.containsKey(i)) {
+        for (long i = n; i >= 1; i--)
+        {
+            if (map.containsKey(i))
+            {
                 f = f * map.get(i) % M;
                 return f;
-            } else {
+            }
+            else
+            {
                 f = f * i % M;
             }
         }
@@ -50,17 +56,28 @@ public class LargeFactorial {
         return f;
     }
 
-    public long[] factorial(long a[], int n) {
-        HashMap<Long, Long> map = new HashMap<Long, Long>();
-        for (int i = 0; i < n; i++) {
-            if (map.containsKey(a[i])) {
-                a[i] = map.get(a[i]);
-            } else {
+    public static long[] factorial(long a[], int n)
+    {
+        HashMap<Long, Long> map = new HashMap<>();
+        for (int i = 0; i < n; i++)
+        {
+            if (!map.containsKey(a[i]))
+            {
                 map.put(a[i], factorials(a[i], map));
-                a[i] = map.get(a[i]);
             }
+            a[i] = map.get(a[i]);
         }
         return a;
+    }
+
+    public static void main(String[] args)
+    {
+        long[] A = { 0, 1, 2, 3, 4 };
+        factorial(A, A.length);
+        for (long j: A)
+        {
+            System.out.print(j + " ");
+        }
     }
 
 }
