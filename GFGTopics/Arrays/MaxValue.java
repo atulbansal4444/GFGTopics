@@ -35,18 +35,22 @@ Expected Time Complexity: O(N)
 Expected Auxiliary Space: O(N)
 */
 
-import java.util.*;
+import java.util.Arrays;
 
-public class MaxValue {
-    static int maxValue(int[] arr, int N) {
-        if (N == 1) {
+public class MaxValue
+{
+    static int maxValue(int[] arr, int N)
+    {
+        if (N == 1)
+        {
             return 0;
         }
 
         int a[] = new int[N];
         int b[] = new int[N];
 
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < N; i++)
+        {
             a[i] = (arr[i] + i);
             b[i] = (arr[i] - i);
         }
@@ -56,5 +60,11 @@ public class MaxValue {
 
         // return max by having diff of the small and large value of array respectively
         return a[N - 1] - a[0] > b[N - 1] - b[0] ? a[N - 1] - a[0] : b[N - 1] - b[0];
+    }
+
+    public static void main(String[] args)
+    {
+        int[] arr = new int[]{1, 2, 3, 1};
+        System.out.println(maxValue(arr, arr.length));
     }
 }

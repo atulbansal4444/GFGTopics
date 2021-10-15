@@ -1,5 +1,3 @@
-package Arrays;
-
 /*
  * Given an array A of N elements. Find the majority element in the array. A
  * majority element in an array A of size N is an element that appears more than
@@ -21,7 +19,10 @@ package Arrays;
  * Expected Time Complexity: O(N). Expected Auxiliary Space: O(1).
  */
 
-import java.util.*;
+package Arrays;
+
+import java.util.HashMap;
+import java.util.Map;
 
 class MajorityElement
 {
@@ -54,5 +55,11 @@ class MajorityElement
             }
         }
         return -1;
+    }
+
+    public static void main(String[] args)
+    {
+        int[] A = { 3, 1, 3, 3, 2 };
+        System.out.println(majorityElement(A, A.length));
     }
 }

@@ -27,43 +27,32 @@ Expected Time Complexity: O(N).
 Expected Auxiliary Space: O(N).
 */
 
+import Trees.ClassesUsedByTree.*;
+
 import java.util.ArrayList;
 
-class Node {
-    int data;
-    Node left, right;
-
-    Node(int item) {
-        data = item;
-        left = right = null;
-    }
-}
-
-class BinaryTree {
-    Node root;
-
-    BinaryTree() {
-        root = null;
-    }
-}
-
-public class InorderTraversal {
-    static void getOrder(Node root, ArrayList<Integer> ls) {
-        if (root == null) {
+public class InorderTraversal
+{
+    static void inOrder(Node root, ArrayList<Integer> ls)
+    {
+        if (root == null)
+        {
             return;
         }
-        getOrder(root.left, ls);
+        inOrder(root.left, ls);
         ls.add(root.data);
-        getOrder(root.right, ls);
+        inOrder(root.right, ls);
     }
 
-    static ArrayList<Integer> inOrder(Node root) {
+    static ArrayList<Integer> inOrder(Node root)
+    {
         ArrayList<Integer> ls = new ArrayList<>();
-        getOrder(root, ls);
+        inOrder(root, ls);
         return ls;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         BinaryTree tree = new BinaryTree();
         tree.root = new Node(10);
         tree.root.left = new Node(20);
