@@ -1,9 +1,7 @@
-package Arrays;
 /*
 Given an array of size N containing only 0s, 1s, and 2s; sort the array in ascending order.
 
 Example 1:
-
 Input: 
 N = 5
 arr[]= {0 2 1 2 0}
@@ -12,8 +10,8 @@ Output:
 Explanation:
 0s 1s and 2s are segregated 
 into ascending order.
-Example 2:
 
+Example 2:
 Input: 
 N = 3
 arr[] = {0 1 0}
@@ -30,31 +28,53 @@ Expected Time Complexity: O(N)
 Expected Auxiliary Space: O(1)
 */
 
-class SortArrayOf_0_1_2 {
-    public static void sort012(int a[], int n) {
+package Arrays;
+
+class SortArrayOf012
+{
+    public static void sort012(int a[], int n)
+    {
         int count1 = 0;
         int count2 = 0;
         int count0 = 0;
-        for (int i = 0; i < n; i++) {
-            if (a[i] == 0) {
+        for (int i = 0; i < n; i++)
+        {
+            if (a[i] == 0)
+            {
                 a[count0++] = 0;
-            } else if (a[i] == 1) {
+            }
+            else if (a[i] == 1)
+            {
                 // count 1s
                 count1++;
-            } else {
+            }
+            else
+            {
                 // count 2s
                 count2++;
             }
         }
 
-        while (count1 > 0) {
+        while (count1 > 0)
+        {
             count1--;
             a[count0++] = 1;
         }
 
-        while (count2 > 0) {
+        while (count2 > 0)
+        {
             count2--;
             a[count0++] = 2;
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        int[] arr= { 0, 2, 1, 2, 0 };
+        sort012(arr, arr.length);
+        for (int j: arr)
+        {
+            System.out.print(j + " ");
         }
     }
 }
