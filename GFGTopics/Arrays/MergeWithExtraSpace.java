@@ -1,5 +1,3 @@
-package Arrays;
-
 /*
 Given two sorted arrays arr1[] of size N and arr2[] of size M. Each array is sorted in non-decreasing order. Merge the two arrays into one sorted array in non-decreasing order without using any extra space.
 
@@ -35,29 +33,55 @@ Expected Time Complexity: O(m+n)
 Expected Auxiliary Space: O(1)
 */
 
+package Arrays;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
 // using list and sort
-public class MergeWithExtraSpace {
-    public void mergeWithSpace(int arr1[], int arr2[], int n, int m) {
+public class MergeWithExtraSpace
+{
+    static void mergeWithSpace(int arr1[], int arr2[], int n, int m)
+    {
         // using list bec may be arrays have duplicates
         ArrayList<Integer> ls = new ArrayList<Integer>();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
+        {
             ls.add(arr1[i]);
         }
-        for (int i = 0; i < m; i++) {
+        for (int i = 0; i < m; i++)
+        {
             ls.add(arr2[i]);
         }
 
         // sort list
         Collections.sort(ls);
         int count = 0;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
+        {
             arr1[i] = ls.get(count++);
         }
-        for (int i = 0; i < m; i++) {
+        for (int i = 0; i < m; i++)
+        {
             arr2[i] = ls.get(count++);
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        int[] arr1 = {1, 3, 5, 7};
+        int[] arr2 = {0, 2, 6, 8, 9};
+
+        mergeWithSpace(arr1, arr2, arr1.length, arr2.length);
+
+        for (int j: arr1)
+        {
+            System.out.print(j + " ");
+        }
+
+        for (int j: arr2)
+        {
+            System.out.print(j + " ");
         }
     }
 }

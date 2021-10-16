@@ -1,5 +1,3 @@
-package Arrays;
-
 /*
  * Given an array nums[] of size n, construct a Product Array P (of same size n)
  * such that P[i] is equal to the product of all the elements of nums except
@@ -15,44 +13,69 @@ package Arrays;
  * Your Task: You do not have to read input. Your task is to complete the
  * function productExceptSelf() that takes array nums[] and n as input
  * parameters and returns a list of n integers denoting the product array P. If
- * the array has only one element the returned list should should contains one
+ * the array has only one element the returned list should contain one
  * value i.e {1} Note: Try to solve this problem without using the division
  * operation.
  * 
  * Expected Time Complexity: O(n) Expected Auxiliary Space: O(1)
  */
 
-class ProductArrayPuzzle {
-    public static long[] productExceptSelf(int nums[], int n) {
+package Arrays;
+
+class ProductArrayPuzzle
+{
+    public static long[] productExceptSelf(int nums[], int n)
+    {
         // code here
         long[] a = new long[n];
         long p = 1;
         int count = 0;
         int index = 0;
-        if (n == 1) {
+        if (n == 1)
+        {
             a[0] = 1;
             return a;
         }
-        for (int i = 0; i < n; i++) {
-            if (nums[i] == 0) {
+        for (int i = 0; i < n; i++)
+        {
+            if (nums[i] == 0)
+            {
                 count++;
                 index = i;
-            } else {
+            }
+            else
+            {
                 p *= nums[i];
             }
 
             if (count >= 2)
+            {
                 return new long[n];
+            }
         }
-        if (count == 1) {
+        if (count == 1)
+        {
             a[index] = p;
             return a;
-        } else {
-            for (int i = 0; i < n; i++) {
+        }
+        else
+        {
+            for (int i = 0; i < n; i++)
+            {
                 a[i] = p / nums[i];
             }
         }
 
         return a;
+    }
+
+    public static void main(String[] args)
+    {
+        int[] arr = { 10, 3, 5, 6, 2 };
+        productExceptSelf(arr, arr.length);
+        for (int j : arr)
+        {
+            System.out.print(j + " ");
+        }
     }
 }
