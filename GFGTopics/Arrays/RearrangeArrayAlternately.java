@@ -29,16 +29,32 @@ Expected Time Complexity: O(N).
 Expected Auxiliary Space: O(1).
 */
 
-public class RearrangeArrayAlternately {
-    public static void rearrange(int arr[], int n) {
+public class RearrangeArrayAlternately
+{
+    public static void rearrange(int arr[], int n)
+    {
         int temp[] = arr.clone();
         int j = n - 1, k = 0;
-        for (int i = 0; i < n; i++) {
-            if (i % 2 == 0) {
+        for (int i = 0; i < n; i++)
+        {
+            if (i % 2 == 0)
+            {
                 arr[i] = temp[j--];
-            } else {
+            }
+            else
+            {
                 arr[i] = temp[k++];
             }
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        int[] arr = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110 };
+        rearrange(arr, arr.length);
+        for (int j : arr)
+        {
+            System.out.print(j + " ");
         }
     }
 }
