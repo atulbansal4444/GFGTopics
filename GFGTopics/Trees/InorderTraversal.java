@@ -1,5 +1,3 @@
-package Trees;
-
 /*
 Given a Binary Tree, find the In-Order Traversal of it.
 
@@ -28,27 +26,29 @@ Expected Time Complexity: O(N).
 Expected Auxiliary Space: O(N).
 */
 
+package Trees;
+
 import Trees.ClassesUsedByTree.BinaryTree;
 import Trees.ClassesUsedByTree.Node;
 import java.util.ArrayList;
 
 public class InorderTraversal
 {
-    static void getOrder(Node root, ArrayList<Integer> ls)
+    static void inOrderTraverse(Node root, ArrayList<Integer> ls)
     {
         if (root == null)
         {
             return;
         }
-        getOrder(root.left, ls);
+        inOrderTraverse(root.left, ls);
         ls.add(root.data);
-        getOrder(root.right, ls);
+        inOrderTraverse(root.right, ls);
     }
 
     static ArrayList<Integer> inOrder(Node root)
     {
         ArrayList<Integer> ls = new ArrayList<>();
-        getOrder(root, ls);
+        inOrderTraverse(root, ls);
         return ls;
     }
 
