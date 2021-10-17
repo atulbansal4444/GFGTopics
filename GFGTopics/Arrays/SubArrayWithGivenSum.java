@@ -1,5 +1,3 @@
-package Arrays;
-
 /*
 Given an unsorted array A of size N that contains only non-negative integers, find a continuous sub-array which adds to a given number S.
 
@@ -28,29 +26,45 @@ Expected Time Complexity: O(N)
 Expected Auxiliary Space: O(1)
 */
 
-import java.util.*;
+package Arrays;
 
-class SubArrayWithGivenSum {
-    static ArrayList<Integer> subarraySum(int[] arr, int n, int s) {
+import java.util.ArrayList;
+
+class SubArrayWithGivenSum
+{
+    static ArrayList<Integer> subArraySum(int[] arr, int n, int s)
+    {
         ArrayList<Integer> list = new ArrayList<Integer>();
-        int currSum = arr[0], strtIndex = 0;
-        for (int i = 1; i <= n; i++) {
-            while (currSum > s && strtIndex < i - 1) {
-                currSum -= arr[strtIndex];
-                strtIndex++;
+        int currSum = arr[0], startIndex = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            while (currSum > s && startIndex < i - 1)
+            {
+                currSum -= arr[startIndex];
+                startIndex++;
             }
 
-            if (s == currSum) {
-                list.add(strtIndex + 1);
+            if (s == currSum)
+            {
+                list.add(startIndex + 1);
                 list.add(i);
                 return list;
             }
 
-            if (i < n) {
+            if (i < n)
+            {
                 currSum += arr[i];
             }
         }
         list.add(-1);
         return list;
+    }
+
+    public static void main(String[] args)
+    {
+        int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        int sum = 15;
+        ArrayList<Integer> ls = subArraySum(arr, arr.length, sum);
+        System.out.print(ls);
     }
 }

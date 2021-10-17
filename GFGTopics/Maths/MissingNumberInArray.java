@@ -21,18 +21,27 @@ Expected Time Complexity: O(N)
 Expected Auxiliary Space: O(1)
 
 */
+
 package Maths;
 
-class MissingNumberInArray {
-    // function will take array of datatype int and size of array as int, as input
-    int MissingNumber(int array[], int n) {
-        // Your Code Here
+class MissingNumberInArray
+{
+    static int MissingNumber(int[] array, int n)
+    {
         int sum = 0, i = 0;
-        for (i = 1; i <= array.length; i++) {
+
+        for (i = 1; i <= n; i++)
+        {
             sum += i;
             sum -= array[i - 1];
         }
-        // returns the missing number
+
         return sum + i;
+    }
+
+    public static void main(String[] args)
+    {
+           int[] arr = new int[]{1, 2, 4, 5};
+           System.out.print(MissingNumber(arr, arr.length));
     }
 }

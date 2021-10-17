@@ -1,5 +1,3 @@
-package Arrays;
-
 /*
 Given an unsorted array arr[] of size N, rotate it by D elements in the counter-clockwise direction. 
 
@@ -26,21 +24,41 @@ Complete the function rotateArr() which takes the array, D and N as input parame
 Expected Time Complexity: O(N)
 Expected Auxiliary Space: O(1)
 */
-public class RotateArray {
-    static void rotateArr(int arr[], int d, int n) {
-        // add your code here
+
+package Arrays;
+
+public class RotateArray
+{
+    static void rotateArr(int arr[], int d, int n)
+    {
         int temp[] = new int[d];
-        for (int i = 0; i < d; i++) {
+        for (int i = 0; i < d; i++)
+        {
             temp[i] = arr[i];
         }
 
-        //
         int j = 0;
-        for (int i = 0; i < n; i++) {
-            if (i >= n - d) {
+        for (int i = 0; i < n; i++)
+        {
+            if (i >= n - d)
+            {
                 arr[i] = temp[j++];
-            } else
+            }
+            else
+            {
                 arr[i] = arr[i + d];
+            }
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        int[] arr = { 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 };
+        int d = 3;
+        rotateArr(arr, d, arr.length);
+        for (int j : arr)
+        {
+            System.out.print(j + " ");
         }
     }
 }
