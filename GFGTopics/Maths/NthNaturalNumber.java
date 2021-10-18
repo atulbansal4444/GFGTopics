@@ -1,5 +1,3 @@
-package Maths;
-
 /*
 Given a positive integer N. You have to find Nth natural number after removing all the numbers containing digit 9.
 
@@ -30,12 +28,17 @@ Expected Time Complexity: O(logN)
 Expected Auxiliary Space: O(1)
 */
 
-class NthNaturalNumber {
-    long findNth(long N) {
+package Maths;
+
+class NthNaturalNumber
+{
+    static long findNth(long N)
+    {
         // code here
         long result = 0;
         long ref = 1;
-        while (N > 0) {
+        while (N > 0)
+        {
             result = result + (ref * (N % 9));
 
             N = N / 9;
@@ -43,5 +46,10 @@ class NthNaturalNumber {
             ref = ref * 10;
         }
         return result;
+    }
+
+    public static void main(String[] args)
+    {
+        System.out.println(findNth(10));
     }
 }
