@@ -34,17 +34,16 @@ class NthNaturalNumber
 {
     static long findNth(long N)
     {
-        // code here
         long result = 0;
         long ref = 1;
+
         while (N > 0)
         {
             result = result + (ref * (N % 9));
-
             N = N / 9;
-
             ref = ref * 10;
         }
+
         return result;
     }
 
