@@ -24,9 +24,8 @@ package Arrays;
 
 class ProductArrayPuzzle
 {
-    public static long[] productExceptSelf(int nums[], int n)
+    public static long[] productExceptSelf(int[] nums, int n)
     {
-        // code here
         long[] a = new long[n];
         long p = 1;
         int count = 0;
@@ -72,8 +71,8 @@ class ProductArrayPuzzle
     public static void main(String[] args)
     {
         int[] arr = { 10, 3, 5, 6, 2 };
-        productExceptSelf(arr, arr.length);
-        for (int j : arr)
+        long[] arr1 = productExceptSelf(arr, arr.length);
+        for (long j : arr1)
         {
             System.out.print(j + " ");
         }

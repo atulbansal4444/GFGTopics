@@ -1,7 +1,6 @@
-package Arrays;
-
 /*
-Given a sorted array of positive integers. Your task is to rearrange  the array elements alternatively i.e first element should be max value, second should be min value, third should be second max, fourth should be second min and so on.
+Given a sorted array of positive integers. Your task is to rearrange  the array elements alternatively, i.e. first
+element should be max value, second should be min value, third should be second max, fourth should be second min and so on.
 
 Example 1:
 
@@ -29,11 +28,13 @@ Expected Time Complexity: O(N).
 Expected Auxiliary Space: O(1).
 */
 
+package Arrays;
+
 public class RearrangeArrayAlternately
 {
-    public static void rearrange(int arr[], int n)
+    public static void rearrange(int[] arr, int n)
     {
-        int temp[] = arr.clone();
+        int[] temp = arr.clone();
         int j = n - 1, k = 0;
         for (int i = 0; i < n; i++)
         {
