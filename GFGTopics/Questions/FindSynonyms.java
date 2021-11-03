@@ -154,7 +154,6 @@ public class FindSynonyms
                 }
                 else if (dic.containsValue(val[0]))
                 {
-
                     //val0 = huge, val1 = big, big->large, large->huge
                     AtomicReference<String> key = new AtomicReference<>();
                     dic.forEach((key1, value) -> {
