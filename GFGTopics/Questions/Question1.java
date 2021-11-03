@@ -1,6 +1,6 @@
 package Questions;
-/*
 
+/*
 Suppose we have some input data describing a graph of relationships between parents and children over multiple families and generations. The data is formatted as a list of (parent, child) pairs, where each individual is assigned a unique positive integer identifier.
 
 For example, in this diagram, 3 is a child of 1 and 2, and 5 is a child of 4:
@@ -11,8 +11,7 @@ For example, in this diagram, 3 is a child of 1 and 2, and 5 is a child of 4:
    \ / \    \ / 
     6   7   12  
 
-
-Sample input/output (pseudodata):
+Sample input/output (pseudoData):
 
 parentChildPairs = [
     (5, 6), (1, 3), (2, 3), (3, 6), (15, 12),
@@ -20,20 +19,17 @@ parentChildPairs = [
 ]
 
 
-Write a function that takes this data as input and returns two collections: one containing all individuals with zero known parents, and one containing all individuals with exactly one known parent.
-
+Write a function that takes this data as input and returns two collections: one containing all individuals
+with zero known parents, and one containing all individuals with exactly one known parent.
 
 Output may be in any order:
-
 findNodesWithZeroAndOneParents(parentChildPairs) => [
   [1, 2, 4, 15, 30],   // Individuals with zero parents
   [5, 7, 9, 16]        // Individuals with exactly one parent
 ]
 
 Complexity Analysis variables:
-
 n: number of pairs in the input
-
 */
 
 import java.util.ArrayList;
