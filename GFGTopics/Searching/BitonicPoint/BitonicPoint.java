@@ -21,38 +21,48 @@ Explanation: Maximum element is 50.
 Your Task:  
 You don't need to read input or print anything. Your task is to complete the function findMaximum() which takes the array arr[], and n as parameters and returns an integer denoting the answer.
 
-Expected Time Complexity: O(logn)
+Expected Time Complexity: O(log n)
 Expected Auxiliary Space: O(1)
 */
-public class BitonicPoint {
-    static int bs(int[] arr, int left, int right, int n) {
-        // if left and right both are n-1 i.e last index;
-        if (left == n - 1) {
+public class BitonicPoint
+{
+    public static int bs(int[] arr, int left, int right, int n)
+    {
+        // if left and right both are n-1 i.e. last index;
+        if (left == n - 1)
+        {
             return arr[n - 1];
         }
-        if (left <= right) {
+        if (left <= right)
+        {
             int mid = (left + right) / 2;
-            if (arr[mid - 1] < arr[mid] && arr[mid] > arr[mid + 1]) {
+            if (arr[mid - 1] < arr[mid] && arr[mid] > arr[mid + 1])
+            {
                 return arr[mid];
             }
 
-            if (arr[mid] < arr[mid + 1]) {
+            if (arr[mid] < arr[mid + 1])
+            {
                 return bs(arr, mid + 1, right, n);
-            } else {
+            }
+            else
+            {
                 return bs(arr, left, mid - 1, n);
             }
         }
         return -1;
     }
 
-    static int findMaximum(int[] arr, int n) {
+    public static int findMaximum(int[] arr, int n)
+    {
         int left = 0;
         int right = n - 1;
         return bs(arr, left, right, n);
     }
 
-    public static void main(String[] args) {
-        int arr[] = { 1, 15, 25, 45, 42, 21, 17, 12, 11 };
+    public static void main(String[] args)
+    {
+        int[] arr = { 1, 15, 25, 45, 42, 21, 17, 12, 11 };
         System.out.println(findMaximum(arr, arr.length));
     }
 }
