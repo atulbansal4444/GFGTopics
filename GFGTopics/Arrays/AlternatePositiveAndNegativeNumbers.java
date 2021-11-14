@@ -29,7 +29,7 @@ import java.util.HashMap;
 
 public class AlternatePositiveAndNegativeNumbers
 {
-    static void rearrange(int[] arr, int n)
+    public static void rearrange(int[] arr, int n)
     {
         HashMap<Integer, Integer> mapP = new HashMap<>();
         HashMap<Integer, Integer> mapN = new HashMap<>();
