@@ -24,19 +24,24 @@ You don't need to read input or print anything. Your task is to complete the fun
 Expected Time Complexity: O(n)
 Expected Auxiliary Space: O(1)
 */
-class BitonicPointWithoutBS {
-    static int findMaximum(int[] arr, int n) {
+
+class BitonicPointWithoutBS
+{
+    public static int findMaximum(int[] arr, int n)
+    {
         int i = 1;
 
-        while (i < n && arr[i - 1] < arr[i]) {
+        while (i < n && arr[i - 1] < arr[i])
+        {
             i++;
         }
 
         return arr[i - 1];
     }
 
-    public static void main(String[] args) {
-        int arr[] = { 1, 15, 25, 45, 42, 21, 17, 12, 11 };
+    public static void main(String[] args)
+    {
+        int[] arr = { 1, 15, 25, 45, 42, 21, 17, 12, 11 };
         System.out.println(findMaximum(arr, arr.length));
     }
 }
