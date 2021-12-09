@@ -106,7 +106,6 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class FindSynonyms
 {
-
     public static void main(String[] argv)
     {
         Scanner sc = new Scanner(System.in);
@@ -185,5 +184,4 @@ public class FindSynonyms
             }
         }
     }
-
 }
