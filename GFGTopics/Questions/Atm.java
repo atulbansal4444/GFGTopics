@@ -100,10 +100,10 @@ public class Atm
     {
         Scanner sc = new Scanner(System.in);
         int amount = sc.nextInt();
-        int thousantNotes = 3;
+        int thousandNotes = 3;
         int fiveHundredNotes = 0;
         int hundredNotes = 45;
 
-        printCount(amount, thousantNotes, fiveHundredNotes, hundredNotes);
+        printCount(amount, thousandNotes, fiveHundredNotes, hundredNotes);
     }
 }
