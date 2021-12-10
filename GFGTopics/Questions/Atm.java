@@ -14,7 +14,7 @@ public class Atm
     {
         if (amount % 100 != 0)
         {
-            throw new Exception("Amount entered should be mutiple of 100, 500 or 1000");
+            throw new Exception("Amount entered should be multiple of 100, 500 or 1000");
         }
 
         int thNotes = amount / 1000;
