@@ -7,7 +7,7 @@ public class Atm
     public static void
         printCount(
             int amount,
-            int thousantNotes,
+            int thousandNotes,
             int fiveHundredNotes,
             int hundredNotes)
         throws Exception
@@ -18,14 +18,14 @@ public class Atm
         }
 
         int thNotes = amount / 1000;
-        if (thNotes <= thousantNotes)
+        if (thNotes <= thousandNotes)
         {
             amount = amount % 1000;
         }
         else
         {
-            thNotes = thousantNotes;
-            amount = amount - (thousantNotes * 1000);
+            thNotes = thousandNotes;
+            amount = amount - (thousandNotes * 1000);
         }
 
         int fiveHunNotes = amount / 500;
