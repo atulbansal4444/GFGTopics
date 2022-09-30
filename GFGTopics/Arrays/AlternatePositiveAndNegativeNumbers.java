@@ -1,4 +1,5 @@
 /*
+
 Given an unsorted array Arr of N positive and negative numbers. Your task is to create an array of alternate positive and negative numbers without changing the relative order of positive and negative numbers.
 Note: Array should start with positive number.
 
@@ -21,6 +22,7 @@ You don't need to read input or print anything. Your task is to complete the fun
 
 Expected Time Complexity: O(N)
 Expected Auxiliary Space: O(N)
+
 */
 
 package Arrays;
@@ -31,8 +33,11 @@ public class AlternatePositiveAndNegativeNumbers
 {
     public static void rearrange(int[] arr, int n)
     {
+        // hashmap for positive numbers
         HashMap<Integer, Integer> mapP = new HashMap<>();
+        // hashmap for negative numbers
         HashMap<Integer, Integer> mapN = new HashMap<>();
+        
         int count = 0, count2 = 0;
 
         for (int i = 0; i < n; i++)
@@ -40,15 +45,19 @@ public class AlternatePositiveAndNegativeNumbers
             if (arr[i] < 0)
             {
                 count2++;
+                //adding negative number
                 mapN.put(count2, arr[i]);
             }
             else if (arr[i] >= 0)
             {
                 count++;
+                // adding positive numbers into map
                 mapP.put(count, arr[i]);
             }
         }
+        
         int j = 1, k = 1;
+        
         for (int i = 0; i < n; i++)
         {
             if (i % 2 == 0 && count > 0)
